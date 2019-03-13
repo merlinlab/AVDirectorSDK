@@ -23,7 +23,6 @@ if(FFMPEG_FOUND)
   add_library(av_director_lib STATIC src/av_director_context.cc src/av_director_context.hpp)
   target_include_directories(av_director_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
   target_include_directories(av_director_lib PUBLIC ${FFMPEG_INCLUDE_DIR})
-  target_link_libraries(av_director_lib ${FFMPEG_LIBAVCODEC})
 else()
   message("Can't find libavcodec, libavformat or libavutil. Add them!")
 endif()
@@ -31,4 +30,4 @@ endif()
 
 # The main program
 add_executable(av_director_demo main.cpp)
-target_link_libraries(av_director_demo PUBLIC av_director_lib ${FFMPEG_LIBAVCODEC})
+target_link_libraries(av_director_demo PUBLIC av_director_lib ${FFMPEG_LIBRARIES})
