@@ -7,4 +7,4 @@ class AVDirectorContext
     AVDirectorContext();
 };
 
-} // 
+} // namespace merlinlab
