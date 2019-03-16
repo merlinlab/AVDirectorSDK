@@ -45,4 +45,4 @@ CTestTestfile.cmake
 _deps
 
 # generated files
-src/av_director_demo
+src/merlin_core
