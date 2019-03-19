@@ -10,7 +10,7 @@ set(CPACK_PACKAGE_VERSION_PATCH 11)
 
 set(target_dir "bin")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -D__LIBAVRESAMPLE__ -std=c99")
-
+set(CMAKE_CXX_STANDARD 14) 
 
 project(merlin_core_lib)
 
