@@ -10,23 +10,24 @@ set(CPACK_PACKAGE_VERSION_PATCH 11)
 
 set(target_dir "bin")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -D__LIBAVRESAMPLE__ -std=c99")
-set(CMAKE_CXX_STANDARD 14) 
+set(CMAKE_CXX_STANDARD 14)
 
 project(merlin_core_lib)
 
-include_directories(".")
+include_directories("." "./src")
 find_package(FFmpeg REQUIRED)
 
-if(FFMPEG_FOUND)
+if (FFMPEG_FOUND)
   message("Found FFMPEG/LibAV libraries")
   # All sources that also need to be tested in unit tests go into a static library
   file(GLOB merlin_src src/*.cc src/*.hpp src/*.c src/*.h)
   add_library(merlin_core_lib STATIC ${merlin_src})
   target_include_directories(merlin_core_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
   target_include_directories(merlin_core_lib PUBLIC ${FFMPEG_INCLUDE_DIR})
-else()
+
+else ()
   message("Can't find libavcodec, libavformat or libavutil. Add them!")
-endif()
+endif ()
 
 
 # The main program

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 
 # The project name
-project(av_director)
+project(merlin_core)
 
 add_subdirectory(thirdparty/catch)
 add_subdirectory(lib)
