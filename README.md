@@ -1,5 +1,7 @@
 README.md
 
+abandon, rewrite in rust.
+
 # How to build
 
 ```shell
